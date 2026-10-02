@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+
+/* --------------------------------------------- */
+
+div{
+	width : 540px;
+	margin : 50px auto;
+	background : rgba(255, 255, 255, 0.45);
+	border : 1px solid #cccccc;
+	border-radius : 7px;
+	padding : 50px 30px 55px;
+	text-align : center;
+}
+div h1{
+	font-size : 140%;
+}
+div p{
+	margin-top : 2em;
+}
+
+
+
+
+/* --responsive------------------------------------------- */
+
+/* 640pixel start */
+@media screen and (max-width : 640px){
+
+div{
+	width : 85%;
+	padding : 25px 5%;
+	text-align : left;
+}
+
+
+}
+/* 640pixel end */
+

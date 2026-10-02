@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>旅の宿ふじ屋　ご予約</title>
+ 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+ 
+ 
+ 
+</head>
+ 
+<body bgcolor="#37abdd">
+ 
+	<div id="contents_container">
+		<div id="text_container" style="line-height:150%;">
+ 			<br />
+ 			
+			ご予約は、ご利用日の２ヶ月前から当日まで受け付けています。<br />
+			ご利用日間近のご予約は、お電話（０８０－１７５０－５４５４）でのご予約をお勧めします。
+			<br />
+			<br />
+
+
+			<form action="./postmail/postmail.cgi" method="post">
+				<table cellspacing="8" style="margin-left:auto;margin-right:auto">
+					<tr>
+						<td>代表者の名前</td>
+						<td><input type="text" size=30 name="代表者の名前"></td>
+					</tr>
+					<tr>
+						<td>電話番号（携帯）</td>
+						<td><input type="text" size=30 name="電話番号（携帯）"></td>
+					</tr>
+					<tr>
+						<td>メールアドレス</td>
+						<td><input type="text" size=30 name="email"></td>
+					</tr>
+					<tr>
+						<td>メールアドレス（確認）</td>
+						<td><input type="text" size=30 name="email2"></td>
+					</tr>
+					<tr>
+						<td>住所</td>
+						<td><input type="text" size=50 name="住所"></td>
+					</tr>
+					<tr>
+						<td>到着日</td>
+						<td>
+							<select name="年">
+								<option selected>年</option>
+								<option value="2014">2014</option>
+								<option value="2015">2015</option>
+								<option value="2016">2016</option>
+							</select>
+							
+							<select name="月">
+								<option selected>月</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+
+							<select name="日">
+								<option>日</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+							</select>
+
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="white-space: nowrap;">おおよその到着時間</td>
+						<td><input type="text" size="30" name="おおよその到着時間" /></td>
+					</tr>
+
+					<tr>
+						<td>宿泊日数</td>
+						<td>
+							<select name="泊数">
+								<option value="1" selected>1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><span style="font-weight:bold">女性</span>は何人？</td>
+						<td>
+							<select name="女性">
+							        <option value="0" selected>0</option>
+							        <option value="1">1</option>
+							        <option value="2">2</option>
+							        <option value="3">3</option>
+							        <option value="4">4</option>
+							        <option value="5">5</option>
+							        <option value="6">6</option>
+							        <option value="7">7</option>
+							        <option value="8">8</option>
+						        </select>
+
+						</td>
+					</tr>
+					<tr>
+						<td><span style="font-weight:bold">男性</span>は何人？</td>
+						<td>
+							<select name="男性">
+							        <option value="0" selected>0</option>
+							        <option value="1">1</option>
+							        <option value="2">2</option>
+							        <option value="3">3</option>
+							        <option value="4">4</option>
+							        <option value="5">5</option>
+							        <option value="6">6</option>
+							        <option value="7">7</option>
+							        <option value="8">8</option>
+						        </select>
+						</td>
+					</tr>
+					<tr>
+						<td>希望の部屋タイプ</td>
+						<td>
+							<select name="部屋タイプ">
+								<option value="domitory">ドミトリー</option>
+								<option value="private">個室</option>
+								<!--<option value="Triple">個室（三人）</option>-->
+							</select>
+
+						</td>
+					</tr>
+					<tr>
+						<td>駐車場利用</td>
+						<td>
+							<select name="駐車場">
+								<option value="いらない">いらない</option>
+								<option value="軽自動車">軽自動車</option>
+								<option value="普通車">普通車</option>
+								<option value="バイク">バイク</option>
+								<option value="原付">原付</option>
+							</select>
+
+						</td>
+					</tr>
+					<tr>
+						<td>コメント</td>
+						<td>
+							<textarea name="comment" rows="5" style="width:220px;"></textarea>
+						</td>
+					</tr>
+					
+
+
+						
+				</table>
+				<br />
+				<input type="submit" value="送信">　<input type="reset" value="リセット">
+
+			</form>
+			<br />
+			<br />
+			<!--
+			ご予約をご希望の方は、<br />
+			<br />
+			「代表者の名前」<br />
+			「電話番号（携帯）」<br />
+			「住所」<br />
+			「到着日」<br />
+			「宿泊日数」<br />
+			「人数（男女別に）」<br />
+			「希望の部屋タイプ（ドミトリーか、個室か）」<br />
+			「駐車場を利用するかしないか」<br />
+			「おおよその到着時間」<br />
+			<br />
+			を明記のうえ、<br />
+			<br />
+			<span style="font-size:20pt;">yado-fujiya@hotmail.co.jp</span><br />
+			<br />
+			まで、メールをください。
+			<br />
+			<br />
+			-->
+			※ご予約メールを確認したら、２４時間以内に返信します。<br />
+			※ご予約後、二日経っても確認メールが届かない場合は、一度お電話ください（０８０－１７５０－５４５４）。<br />
+			
+			
+			<br />
+			<hr />
+			<br />
+			キャンセル料について<br />
+			<br />
+ 
+			■個室、または２名以上、または延べ５泊以上ご利用の場合<br />
+			（事前に宿泊料の振込をお願いすることがあります）<br />
+			<br />
+			宿泊日の前日、当日のキャンセル　全額<br />
+			宿泊日の前々日～一週間前のキャンセル　半額<br />
+			<br />
+			■貸切の場合<br />
+			ご予約日から全額のキャンセル料が発生します。<br />
+			事前に宿泊料の振り込みをお願いすることがあります。<br />
+			<br />
+			■その他の場合<br />
+			宿泊日の前日、当日のキャンセル　全額<br />
+			<br />
+			以上のキャンセル料を設定していますので、<br />
+			ご予約の変更・キャンセルはお早めにお願い致します。<br />
+			<br />
+			尚、ご不明な点がございましたら、ふじ屋　あつし までご連絡ください。<br />
+			yado.fujiya@gmail.com<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
+		</div>
+	</div>
+	
+ 
+</body>
+</html>
+

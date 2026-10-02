@@ -1,0 +1,238 @@
+<?php
+
+/*--------------------------------
+	Script Name : Responsive Mailform
+	Author : FIRSTSTEP
+	Author URL : http://www.1-firststep.com/
+	Create Date : 2014/3/25
+	Version : 2.2
+	Last Update 2016/4/4
+--------------------------------*/
+
+
+error_reporting(E_ALL);
+
+
+mb_language('en');
+mb_internal_encoding('UTF-8');
+
+
+require 'config-1-en.php';
+
+
+
+
+
+if( isset($_SERVER['HTTP_REFERER']) ){
+	$referer = $_SERVER['HTTP_REFERER'];
+}else{
+	$referer = '';
+}
+
+if( $spam_check == 1 && !empty($domain_name) ){
+	if( strpos($referer, $domain_name) === false){
+		echo '<p>error</p>';
+		exit;
+	}
+}
+
+
+
+
+
+$name = '';
+$country = '';
+$mail_address = '';
+$mail_address_confirm = '';
+$gender = '';
+$address = '';
+$phone = '';
+$day = '';
+$numberofnight = '';
+$female = '';
+$male = '';
+$roomtype = '';
+$parking = '';
+$message = '';
+
+$javascript_action = false;
+$javascript_comment = 'Input check before transmission did not work';
+$now_url = '';
+$before_url = '';
+
+
+if( !(empty($_POST['name'])) ){
+	$name = mb_convert_kana($_POST['name'], 'KVa');
+}
+
+if( !(empty($_POST['country'])) ){
+	$country = mb_convert_kana($_POST['country'], 'KVa');
+}
+
+if( !(empty($_POST['read_1'])) ){
+	$read_1 = mb_convert_kana($_POST['read_1'], 'KVa');
+}
+
+if( !(empty($_POST['read_2'])) ){
+	$read_2 = mb_convert_kana($_POST['read_2'], 'KVa');
+}
+
+
+if( !(empty($_POST['mail_address'])) ){
+	$mail_address = $_POST['mail_address'];
+}
+
+if( !(empty($_POST['mail_address_confirm'])) ){
+	$mail_address_confirm = $_POST['mail_address_confirm'];
+}
+
+if( !(empty($_POST['mail_address'])) && !(empty($_POST['mail_address_confirm'])) ){
+	if( !($mail_address === $mail_address_confirm) ){
+		echo '<p>The email entered does not match the original email provided.</p>';
+		exit;
+	}
+	
+	if( !(preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail_address)) ){
+		echo '<p>It is not correct email address.</p>。';
+		exit;
+	}
+}
+
+
+if( !(empty($_POST['gender'])) ){
+	$gender = $_POST['gender'];
+}
+
+
+if( !(empty($_POST['postal'])) ){
+	$postal = mb_convert_kana($_POST['postal'], 'a');
+	$postal = str_replace(array(' ','-'), '', $postal);
+}
+
+
+if( !(empty($_POST['address'])) ){
+	$address = mb_convert_kana($_POST['address'], 'KVa');
+}
+
+
+if( !(empty($_POST['phone'])) ){
+	$phone = mb_convert_kana($_POST['phone'], 'a');
+}
+
+
+if( !(empty($_POST['day'])) ){
+	$day = mb_convert_kana($_POST['day'], 'as');
+}
+
+
+if( !(empty($_POST['numberofnight'])) ){
+	$numberofnight = $_POST['numberofnight'];
+}
+
+if( !(empty($_POST['female'])) ){
+	$female = $_POST['female'];
+}
+
+if( !(empty($_POST['male'])) ){
+	$male = $_POST['male'];
+}
+
+if( !(empty($_POST['roomtype'])) ){
+	$roomtype = $_POST['roomtype'];
+}
+
+if( !(empty($_POST['parking'])) ){
+	$parking = $_POST['parking'];
+}
+
+if( !(empty($_POST['message'])) ){
+	$message = mb_convert_kana($_POST['message'], 'KVa');
+}
+
+
+
+
+if( !(empty($_POST['javascript_action'])) ){
+	$javascript_action = true;
+	$javascript_comment = 'Input check before transmission worked correctly.';
+}
+
+
+if( !(empty($_POST['now_url'])) ){
+	$now_url = mb_convert_kana($_POST['now_url'], 'as');
+}
+
+
+if( !(empty($_POST['before_url'])) ){
+	$before_url = mb_convert_kana($_POST['before_url'], 'as');
+}
+
+
+
+
+
+if( $javascript_check == 1 && $javascript_action === false ){
+	echo '<p>error</p>';
+	exit;
+}
+
+
+
+
+
+$now = date('Y/m/d H:i:s');
+
+
+require 'config-2-en.php';
+
+
+$send_subject = 'Reservation request for Guesthouse Fujiya was sent.';
+
+if( $reply_mail == 1 ){
+	$additional_headers = "From:".$mail_address;
+}else{
+	$additional_headers = "From:".$send_address;
+}
+
+
+$my_result = mb_send_mail($send_address, $send_subject, $send_body, $additional_headers);
+
+
+
+
+
+if( $reply_mail == 1 ){
+	$thanks_subject = '[automatic]Thank you for your reservaton request.';
+	$send_name = mb_encode_mimeheader($send_name, 'ISO-2022-JP');
+	$thanks_additional_headers = "From:".$send_name." <".$send_address.">";
+	
+	
+	$you_result = mb_send_mail($mail_address, $thanks_subject, $thanks_body, $thanks_additional_headers);
+}
+
+
+
+
+
+switch( $reply_mail ){
+	case 0:
+		if( $my_result ){
+			header('Location: '.$thanks_page_url);
+		}else{
+			echo '<p>error<br />Sorry about error.</p>';
+			exit;
+		}
+		break;
+	
+	case 1:
+		if( $my_result && $you_result ){
+			header('Location: '.$thanks_page_url);
+		}else{
+			echo '<p>error<br />Sorry about error.</p>';
+			exit;
+		}
+	 break;
+}
+
+
+?>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<title>ふじや宿泊予約申し込みフォーム</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="css/import.css" />
+<link rel="stylesheet" type="text/css" href="css/mailform.css" />
+
+<!-- ご希望の日時選択ライブラリここから -->
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css" />
+<!-- ご希望の日時選択ライブラリここまで -->
+
+</head>
+<body><h2>ふじや宿泊申込み</h2>
+<p class="center"><strong>※メールアドレスが間違っていると自動返信メールが届きません。<br>ご予約も確定できませんのでご注意下さい。</strong></p>
+<p class="center">1週間前〜前々日のキャンセルは50%（2名様以上のご予約）<br>宿泊日前日、当日、無断キャンセルは宿泊費の100%（1名様から）です。</p>
+<p class="center">ご利用日間近のご予約は、お電話でのご予約をお勧めします。<br>TEL:080-1750-5454　(ふじや あつし)</p>
+
+	<form action="php/mailform.php" method="post" id="mail_form">
+		<dl>
+			<dt>代表者のお名前<span>Your Name</span></dt>
+			<dd class="required"><input type="text" id="name_1" name="name_1" value="" /></dd>
+			
+			<dt>メールアドレス<span>Mail Address</span></dt>
+			<dd class="required"><input type="text" id="mail_address" name="mail_address" value="" /></dd>
+			
+			<dt>メールアドレス(確認)<span>Mail Address Confirm</span></dt>
+			<dd class="required"><input type="text" id="mail_address_confirm" name="mail_address_confirm" value="" /></dd>
+			
+			<dt>郵便番号<span>Postal</span></dt>
+			<dd><input type="text" id="postal" name="postal" value="" onkeyup="AjaxZip3.zip2addr(this,'','address_1','address_1');" />　<a href="http://www.post.japanpost.jp/zipcode/" target="_blank">郵便番号検索</a></dd>
+			
+			<dt>住所<span>Address</span></dt>
+			<dd class="required"><input type="text" id="address_1" name="address_1" value="" /><input type="text" id="address_2" name="address_2" value="" /></dd>
+			
+			<dt>電話番号(携帯電話)<span>Phone Number</span></dt>
+			<dd class="required"><input type="text" id="phone" name="phone" value="" /></dd>
+			
+			<dt>宿泊日／到着時刻<span>Day</span></dt>
+			<dd class="required"><input type="text" id="day" name="day" value="" readonly /></dd>
+			
+			<dt>宿泊日数<span>Numberofnight<br><div align="left">※長期のご利用の方は「それ以上」を選んで、コメント欄に記載してください。</div></span></dt>
+			<dd class="required">
+				<select id="numberofnight" name="numberofnight">
+					<option value="1泊">1泊</option>
+					<option value="2泊">2泊</option>
+					<option value="3泊">3泊</option>
+					<option value="4泊">4泊</option>
+					<option value="5泊">5泊</option>
+					<option value="6泊">6泊</option>
+                    <option value="1週間">1週間</option>
+                    <option value="それ以上">それ以上</option>
+				</select>
+                
+			</dd><dt>女性人数<span>female</span></dt>
+			<dd class="required">
+				<select id="female" name="female">
+					<option value="">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+                    <option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20〜">20〜</option>
+				</select>
+			</dd>
+			
+			<dt>男性人数<span>male</span></dt>
+			<dd class="required">
+				<select id="male" name="male">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+                    <option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20〜">20〜</option>
+				</select>
+			</dd>
+            
+            </dd><dt>お部屋タイプ<span>roomtype<br><div align="left">※複数タイプをご利用の場合はコメント欄に記載してください。</div></span></dt>
+			<dd class="required">
+				<select id="roomtype" name="roomtype">
+					<option value="男性専用ドミトリー">男性専用ドミトリー</option>
+					<option value="女性専用ドミトリー">女性専用ドミトリー</option>
+					<option value="個室">個室</option>
+				</select>
+			</dd>
+			
+			</dd><dt>駐車場ご利用<span>parking <br><div align="left">※複数台となる場合はコメント欄に記載してください。</div></span></dt>
+			<dd>
+				<select id="parking" name="parking">
+					<option value="なし">なし</option>
+					<option value="軽自動車">軽自動車</option>
+					<option value="普通車">普通車</option>
+                    <option value="普通車（3ナンバーなどの大型）">普通車（3ナンバーなどの大型）</option>
+					<option value="原付(125ccまで)">原付(125ccまで)</option>
+					<option value="バイク(400ccまで)">バイク(400ccまで)</option>
+                    <option value="大型バイク(401cc以上)">大型バイク(401cc以上)</option>
+				</select>
+			</dd>
+            
+            <dt>コメント<span>Message<br><div align="left">長期、複数タイプのお部屋利用、複数の駐車場タイプご利用の方はこちらに記載してください。</dt>
+			<dd><textarea id="message" name="message" cols="40" rows="5"></textarea></dd>
+			
+			<dt>送信する<span>Send</span></dt>
+			<dd class="required"><input type="submit" id="mail_submit_button" name="mail_submit_button" value="送信する" /></dd>
+		</dl>
+	</form>
+
+
+<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+<script type="text/javascript" src="js/mailform.js"></script>
+
+
+<!-- 住所自動入力ライブラリここから -->
+<script type="text/javascript" src="js/ajaxzip3.js"></script>
+<!-- 住所自動入力ライブラリここまで -->
+
+
+<!-- ご希望の日時選択ライブラリここから -->
+<script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
+<script>
+	$(function(){
+		$('#day').datetimepicker({
+			//サンプルとして選択可能時間帯を7:00～18:00にしています。
+			minTime : '17:00',
+			maxTime : '22:00'
+		});
+	});
+</script>
+<!-- ご希望の日時選択ライブラリここまで -->
+
+
+</body>
+</html>

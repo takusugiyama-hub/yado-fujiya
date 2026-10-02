@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ふじや</title>
+<meta name="viewport" content="width=device-width">
+<meta name="keywords" content="道後温泉,道後,旅,旅行,女性１人旅、女性一人旅,ゲストハウス,安宿,愛媛,四国,松山,ふじ屋,不二屋,富士屋,ふじや,ふじ家,ドミトリー" />
+<meta name="description" content="四国は愛媛松山、道後温泉近くのゲストハウス、旅の宿「ふじ屋」のホームページです。宿の予約はもちろん、松山の知られざる魅力や隠れたスポットなど楽しく紹介します。女性１人旅の方も安心してお泊まり頂けます。" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.smoothscroll.js"></script>
+<script type="text/javascript" src="js/jquery.scrollshow.js"></script>
+<script type="text/javascript" src="js/jquery.slideshow.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/tel.js"></script>
+<script>
+$(function($){
+	$('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 30, headerfix : $('nav')});
+	$('.totop').scrollshow({position : 500});
+	$('.slide').slideshow({
+		touch        : false,
+		bgImage      : true,
+		autoSlide    : true,
+		effect       : 'fade',
+		repeat       : true,
+		easing       : 'swing',
+		interval     : 10000,
+		duration     : 1000,
+		imgHoverStop : false,
+		navHoverStop : false,
+		navImg       : false,
+		navImgCustom : false,
+		navImgSuffix : ''
+	});
+});
+</script>
+<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+	<h1><img src="images/logo.png" alt="ふじや"></h1>
+	<div class="slide">
+		<ul class="slideInner">
+			<li><img src="images/img_03.jpg" alt=""></li>
+            <li><img src="images/img_04.jpg" alt=""></li>
+            <li><img src="images/img_05.jpg" alt=""></li>
+            <li><img src="images/img_10.jpg" alt=""></li>
+		</ul>
+	</div><!-- /.slide -->
+</header>
+<nav>
+	<ul>
+        <li><a href="#fee">宿泊料金</a></li>
+		<li><a href="javascript:w=window.open('form.html','','scrollbars=yes,Width=600,Height=800');w.focus();">ご予約</a></li>
+        <li><a href="#アクセス">アクセス</a></li>
+        <li><a href="javascript:w=window.open('gekkoso.html','','scrollbars=yes,location=1,Width=600,Height=800');w.focus();">月光荘</a></li>
+       </ul>
+</nav>
+<p class="right">〒790-0842 愛媛県松山市道後湯之町7-23<a href="https://www.google.co.jp/maps/place/%E3%80%92790-0842+%E6%84%9B%E5%AA%9B%E7%9C%8C%E6%9D%BE%E5%B1%B1%E5%B8%82%E9%81%93%E5%BE%8C%E6%B9%AF%E4%B9%8B%E7%94%BA%EF%BC%97%E2%88%92%EF%BC%92%EF%BC%93/@33.8508094,132.7819571,17z/data=!3m1!4b1!4m5!3m4!1s0x354fe5d7910c4a39:0x287826ec1ae45c0!8m2!3d33.8508094!4d132.7841458" target="_blank">【MAP】</a>
+<br><span data-action="call" data-tel="080-1750-5454">TEL:080-1750-5454</span><br><a href="mailto:yado.fujiya&#64;gmail.com">MAIL:yado.fujiya@gmail.com</a></p>
+<div id="contents">
+<p id="greeting"></p>
+<h2>ふじやはこんな宿</h2>
+        <div class="threeCol">
+		<div class="threeColInner">
+			<div class="photoText">
+			  <img src="images/bed.jpg" alt="ベッドルーム">
+				<h4>ベッドルーム</h4>
+				<p>手作りのしっかりとしたベッドです。　ゆっくりお休みください。</p>
+			</div><!-- /.photoText -->
+			<div class="photoText">
+			  <img src="images/living3.jpg" alt="リビング">
+				<h4>リビング</h4>
+				<p>みんなの集まるのんびりスペース。インターネット(wifi)もあります。利用無料です</p>
+			</div><!-- /.photoText -->
+			<div class="photoText">
+			  <img src="images/dogoonsen.jpg" alt="好立地">
+				<h4>好立地</h4>
+				<p>道後温泉まで徒歩３分！　道後温泉駅、商店街まで徒歩１分！！</p>
+			</div><!-- /.photoText -->
+			<div class="photoText">
+			  <img src="images/kitchen.jpg" alt="カウンターキッチン">
+				<h4>カウンターキッチン</h4>
+				<p>冷蔵庫、レンジ、トースター、炊飯器、調味料　ご自由にお使いください。</p>
+			</div><!-- /.photoText -->
+			<div class="photoText">
+			  <img src="images/ensoku.jpg" alt="遠足">
+				<h4>遠足</h4>
+				<p>時々みんなで外遊び♪　山登り、自然農、釣り、廃校巡り等々　情報ありますよ！</p>
+			</div><!-- /.photoText -->
+			<div class="photoText">
+			  <img src="images/shower.jpg" alt="シャワールーム">
+				<h4>シャワールーム</h4>
+				<p>シャワーのみ利用できます<br>
+				※タオル・ソープ等はご持参ください</p>
+			</div><!-- /.photoText -->
+		</div><!-- /.threeColInner -->
+	</div><!-- /.threeCol -->
+    
+  <p id="fee"></p>
+  <h3>宿泊料金（料金は一泊一人当たり）</h3>
+	  <table width="680" cellpadding="10" cellspacing="1">
+	    <tbody>
+	      <tr>
+	        <td colspan="2">ドミトリー</td>
+	        <td width="50">2,000円</td>
+	        <td width="424" rowspan="13"><p>ドミトリーとは相部屋のことです。<br>
+	          男性専用、女性専用と分かれてありますので、女性一名様でも安心してご利用いただけます。<br>
+	          </p>
+	          <p>ペット同伴不可です。</p>
+	          <p>チェックインは17時から22時までです。<br>
+	            チェックアウトは午前10時です。<br>
+	            チェックイン後の門限はありません。</p>
+	          <p>?-キャンセル料について-<br>[2名様以上でご利用の場合]<br>
+	            一週間前?前々日…宿泊費の50%<br>
+              宿泊日前日、当日…宿泊費の100%</p>
+              <p>[1名様でご利用の場合]<br>宿泊日前日、当日…宿泊費の100%</p>
+	          <p>多忙期など事前にお振込をお願いすることがございます。お振込後はキャンセル・変更ができませんのでご了承ください。<br>
+              </p>
+	          <p>※ふじやはホテル、旅館ではありません。設備、サービスにご満足いただけないかもしれませんが、ホテルや旅館に無いような「楽しい宿」をコンセプトに運営しております。<br>
+	            この点をご理解の上、ご利用くださいませ。</p>
+	          <center>
+	            <input name="form" type="button" id="form" onclick="window.open('form.html','reservation','width=650,height=630,scrollbars=yes');" value="予約する">
+              </center></td>
+          </tr>
+	      <tr>
+	        <td width="35" rowspan="3">個室<br></td>
+	        <td width="70">1名</td>
+	        <td>3,000円</td>
+           </tr>
+	      <tr>
+	        <td>2名</td>
+	        <td>2,700円</td>
+          </tr>
+	      <tr>
+	        <td>3名</td>
+	        <td>2,600円</td>
+          </tr>
+	      <tr>
+	        <td nowrap="nowrap">4～5名</td>
+	        <td>2,500円</td>
+          </tr>
+	      <tr>
+	        <td rowspan="2">車</td>
+	        <td>軽自動車</td>
+	        <td>500円</td>
+          </tr>
+	      <tr>
+	        <td>普通自動車</td>
+	        <td>700円</td>
+          </tr>
+          　　</tr>
+	      <tr>
+	        <td rowspan="3">バイク</td>
+	        <td>原付（125cc以下）</td>
+	        <td>100円</td>
+          </tr>
+	      <tr>
+	        <td>普通（400cc以下）</td>
+	        <td>200円</td>
+          </tr>
+	      <tr>
+	        <td>大型（401cc以上）</td>
+	        <td>300円</td>
+          </tr>
+	      <tr>
+	        <td rowspan="3">その他</td>
+	        <td>洗濯機</td>
+	        <td>300円</td>
+          </tr>
+	      
+        </tbody>
+      </table>
+	</dl>
+<p id="アクセス"></p><h2>アクセス</h2>
+<h3><center>「ふじや」へは、青い山を目指してください。
+</center></h3>
+	<div class="imgL">
+		<img src="images/map_j1.jpg" alt="map">
+         <br><h3>＜交通機関でのふじやへの行き方＞</h3>
+		<p>松山空港から	リムジンバスか一般定期のバスに乗って
+道後温泉駅で下車	950円　50分<br><br>
+松山港から	リムジンバスに乗って道後温泉駅で下車	1,010円　40分<br><br>
+ＪＲ松山駅から	松山駅前駅から路面電車に乗って
+道後温泉駅で下車	180円　20分<br><br>
+いよてつ松山市駅から	松山市駅前駅から路面電車に乗って
+道後温泉駅で下車	180円　20分<br></p>
+
+	<a href="https://www.google.co.jp/maps/place/%E3%80%92790-0842+%E6%84%9B%E5%AA%9B%E7%9C%8C%E6%9D%BE%E5%B1%B1%E5%B8%82%E9%81%93%E5%BE%8C%E6%B9%AF%E4%B9%8B%E7%94%BA%EF%BC%97%E2%88%92%EF%BC%92%EF%BC%93/@33.8508094,132.7819571,17z/data=!3m1!4b1!4m5!3m4!1s0x354fe5d7910c4a39:0x287826ec1ae45c0!8m2!3d33.8508094!4d132.7841458" target="_blank">Google Mapでみる</a></div><!-- /.imgL -->
+<p><center><img src="tops.gif" alt="アニメーションgif" width="262" height="247"></a>
+      </center></p><br><p><center>〒790-0842 愛媛県松山市道後湯之町7-23  TEL:080-1750-5454</center></p>
+</div><!-- /.contents -->
+
+<footer>
+	<div><small>Copyright &#169; 2016 ふじや All Rights Reserved.</small></div><!-- /.copyright -->
+</footer>
+
+<div class="totop"><a href="#"><img src="images/totop.png" alt="ページのトップへ戻る"></a></div><!-- /.totop -->
+</body>
+</html>

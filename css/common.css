@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.nonborder {
+  border:none;
+  outline:none;
+}.marqueeRightLeft p {
+	text-align: center;
+}
+.right {
+	text-align: right;
+	color: #FFF;
+	font-size: 12px;
+	line-height: 14px;
+}
